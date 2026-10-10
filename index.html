@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MISSION 5 PILLARS — Lima Misi Penjelajah Muslim</title>
+<style>
+:root{--navy:#173b67;--blue:#42c9f4;--gold:#ffd34f;--pink:#ff6da9;--green:#46c88a;--ink:#18324d;--cream:#fff9e9}
+*{box-sizing:border-box}body{margin:0;font-family:"Trebuchet MS",Arial,sans-serif;background:linear-gradient(#69d9fa,#e4f9ff 58%,#a9e9a7);color:var(--ink);min-height:100vh;display:grid;place-items:center;padding:14px}
+.game{width:min(1100px,100%);min-height:min(680px,94vh);aspect-ratio:16/10;background:#fffdf4;border:5px solid white;border-radius:26px;box-shadow:0 18px 50px #14507835;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(90deg,#0c9fd0,#4dd4ef);color:white;padding:12px 22px;border-bottom:4px solid #ffe16c}
+.brand{font-weight:1000;letter-spacing:1px;text-shadow:2px 3px 0 #8549a7;font-size:clamp(15px,2.2vw,24px)}.mini{font-size:12px;font-weight:800;background:#ffffff35;padding:7px 11px;border-radius:99px}
+.screen{display:none;flex:1;padding:clamp(16px,3vw,32px);overflow:auto;background:radial-gradient(circle at 90% 15%,#fff4ad 0 7%,transparent 7.5%),linear-gradient(180deg,#dff8ff,#fff9e9 75%)}.screen.active{display:flex;flex-direction:column}
+h1,h2,h3,p{margin-top:0}h1{font-size:clamp(32px,5.2vw,60px);line-height:1.04;margin-bottom:12px;color:#173b67;text-shadow:2px 3px 0 #fff}h2{font-size:clamp(24px,3vw,36px);color:#173b67;margin-bottom:10px}p{line-height:1.5}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center;flex:1}.hero-art{min-height:270px;border-radius:24px;background:linear-gradient(#53d0f5 0 57%,#a5e6a0 57%);display:grid;place-items:center;position:relative;overflow:hidden;border:4px solid white;box-shadow:0 7px 0 #9bdbe9}.sun{position:absolute;right:22px;top:18px;font-size:46px}.mosque{font-size:clamp(100px,17vw,185px);filter:drop-shadow(0 8px 0 #d3c5a3);z-index:1}.kids{position:absolute;bottom:12px;font-size:clamp(32px,5vw,56px);z-index:2}.cloud{position:absolute;top:25px;left:18px;font-size:32px}.tag{display:inline-block;background:#ffdf63;color:#633e0c;border-radius:99px;padding:8px 14px;font-weight:900;margin-bottom:13px}.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.btn{border:0;border-radius:14px;padding:13px 19px;font-weight:900;font-size:15px;cursor:pointer;box-shadow:0 5px 0 #0002;transition:.15s;min-height:46px}.btn:hover{transform:translateY(-2px);filter:brightness(1.04)}.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #0002}.primary{background:var(--pink);color:white}.blue{background:#26bce7;color:#063a58}.gold{background:var(--gold);color:#684800}.green{background:var(--green);color:#063e2a}.light{background:white;color:var(--navy);border:2px solid #b8e9f5}.mapgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0}.mission{background:white;border:3px solid #c4edf8;border-radius:18px;padding:14px 8px;text-align:center;cursor:pointer;box-shadow:0 5px 0 #ccebf1;transition:.15s}.mission:hover{transform:translateY(-4px)}.mission .emoji{font-size:40px}.mission strong{display:block;margin:7px 0 4px}.mission small{color:#587087}.mission.done{background:#e3ffed;border-color:#63d89d}.mission.done:after{content:"✓ SELESAI";display:block;color:#15804b;font-weight:1000;font-size:11px;margin-top:6px}.progresswrap{height:14px;background:#d6edf4;border-radius:99px;overflow:hidden;margin:8px 0 16px}.progressbar{height:100%;width:0;background:linear-gradient(90deg,#28c5e8,#58d79a);transition:width .35s}.questionbox{max-width:820px;margin:auto;width:100%;background:#fff;border:3px solid #c4edf8;border-radius:24px;padding:clamp(18px,3vw,30px);box-shadow:0 8px 0 #d7edf1}.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.pill{background:#e8f9ff;border-radius:99px;padding:7px 12px;font-weight:900;color:#087ca0}.question{font-size:clamp(22px,3vw,32px);font-weight:900;text-align:center;margin:22px 0}.answers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.answer{background:#fff7d9;border:3px solid #f3d16c;border-radius:16px;padding:16px 10px;font-size:clamp(15px,2vw,19px);font-weight:900;cursor:pointer;min-height:70px;color:#674b0b}.answer:hover{background:#ffedaa;transform:translateY(-2px)}.answer.correct{background:#dffbea;border-color:#50cb8d;color:#126a42}.answer.wrong{background:#ffe5e8;border-color:#ff8092;color:#9e2437}.feedback{margin-top:16px;padding:15px;border-radius:15px;background:#edfaff;display:none;font-weight:700;line-height:1.5}.feedback.show{display:block}.feedback.good{background:#e1ffed;color:#11663d}.feedback.bad{background:#fff0db;color:#79500c}.badgebig{font-size:72px;display:block;text-align:center;filter:drop-shadow(0 5px 0 #0001)}.center{text-align:center;align-items:center;justify-content:center}.center p{max-width:720px}.rulegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.rule{background:white;border-radius:16px;padding:17px;border:2px solid #d5eff7}.rule span{font-size:34px}.footer{background:#fff;padding:9px 18px;display:flex;justify-content:space-between;gap:10px;align-items:center;color:#587087;font-size:12px;border-top:1px solid #e0f0f4}.toast{position:absolute;top:72px;right:16px;background:#173b67;color:white;padding:10px 15px;border-radius:12px;display:none;z-index:5}.toast.show{display:block;animation:pop .35s}@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}.confetti{font-size:30px;letter-spacing:7px;animation:bounce 1s infinite alternate}@keyframes bounce{to{transform:translateY(-8px)}}.smallnote{font-size:13px;color:#5c7182}
+@media(max-width:700px){.game{aspect-ratio:auto;min-height:94vh}.hero{grid-template-columns:1fr}.hero-art{min-height:210px;order:-1}.mapgrid{grid-template-columns:repeat(2,1fr)}.answers{grid-template-columns:1fr}.rulegrid{grid-template-columns:1fr}.topbar{padding:10px 13px}.footer{font-size:10px}.screen{padding:16px}}
+</style>
+</head>
+<body>
+<div class="game">
+ <div class="topbar"><div class="brand">🌙 MISSION 5 PILLARS</div><div class="mini" id="scorePill">⭐ Bintang: 0</div><div class="mini">PAI • SD 1–4</div></div>
+ <div class="toast" id="toast">Badge didapat!</div>
+ <section class="screen active" id="cover">
+  <div class="hero">
+   <div><span class="tag">PETUALANGAN EDUKATIF</span><h1>LIMA MISI<br>PENJELAJAH MUSLIM</h1><p>Jelajahi kota Islami, pelajari lima rukun Islam, dan kumpulkan lima lencana ilmu. Siap memulai perjalanan?</p><div class="btnrow"><button class="btn primary" onclick="go('instructions')">▶ MULAI MISI</button><button class="btn light" onclick="go('instructions')">CARA BERMAIN</button></div><p class="smallnote">Belajar dengan gembira, tetap menghormati ibadah.</p></div>
+   <div class="hero-art"><div class="sun">☀️</div><div class="cloud">☁️ ☁️</div><div class="mosque">🕌</div><div class="kids">🧕🏻 👦🏻 👧🏻</div></div>
+  </div>
+ </section>
+ <section class="screen" id="instructions">
+  <span class="tag">SEBELUM BERANGKAT</span><h2>Bagaimana cara bermain?</h2><div class="rulegrid">
+   <div class="rule"><span>🗺️</span><h3>1. Pilih misi</h3><p>Kunjungi lima pos rukun Islam pada peta.</p></div>
+   <div class="rule"><span>💡</span><h3>2. Jawab soal</h3><p>Pilih satu jawaban yang paling tepat. Baca penjelasan setelah menjawab.</p></div>
+   <div class="rule"><span>🏅</span><h3>3. Kumpulkan badge</h3><p>Selesaikan setiap pos untuk mendapat satu lencana dan bintang.</p></div>
+  </div><p><b>Ingat:</b> permainan ini untuk belajar pengetahuan tentang ibadah, bukan untuk mempermainkan ibadah itu sendiri.</p><div class="btnrow"><button class="btn light" onclick="go('cover')">← KEMBALI</button><button class="btn primary" onclick="go('map')">BUKA PETA MISI →</button></div>
+ </section>
+ <section class="screen" id="map">
+  <span class="tag">PETA PETUALANGAN</span><h2>Lima Pos Rukun Islam</h2><p>Urutkan perjalananmu dari misi pertama sampai kelima.</p><div class="progresswrap"><div class="progressbar" id="mapProgress"></div></div><p id="progressText"><b>Progress: 0/5 misi selesai</b></p>
+  <div class="mapgrid" id="mapGrid"></div><div class="btnrow"><button class="btn light" onclick="go('instructions')">← PETUNJUK</button><button class="btn gold" onclick="startMission(nextMission())">LANJUTKAN MISI ▶</button></div>
+ </section>
+ <section class="screen" id="questionScreen">
+  <div class="questionbox"><div class="qhead"><span class="pill" id="missionPill">MISI 1/5</span><span class="pill" id="questionPill">SOAL 1/2</span></div><div class="progresswrap"><div class="progressbar" id="questionProgress"></div></div><div class="badgebig" id="missionEmoji">🗝️</div><h2 class="center" id="missionTitle">Misi Syahadat</h2><div class="question" id="questionText"></div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="btnrow" style="justify-content:center"><button class="btn light" onclick="go('map')">🗺️ PETA MISI</button><button class="btn primary" id="nextButton" style="display:none" onclick="nextQuestion()">LANJUT →</button></div></div>
+ </section>
+ <section class="screen center" id="badgeScreen">
+  <div class="confetti">✨ 🎉 ✨ 🎊 ✨</div><span class="badgebig" id="badgeEmoji">🏅</span><span class="tag">CHECKPOINT BERHASIL</span><h2 id="badgeTitle">Badge Misi Didapat!</h2><p id="badgeText">Kamu menyelesaikan misi ini.</p><div class="btnrow" style="justify-content:center"><button class="btn light" onclick="go('map')">KEMBALI KE PETA</button><button class="btn primary" onclick="continueAfterBadge()">MISI BERIKUTNYA →</button></div>
+ </section>
+ <section class="screen center" id="win">
+  <div class="confetti">🌟 🎉 🌟 🎊 🌟</div><div class="hero-art" style="width:min(480px,100%);min-height:180px"><div class="sun">☀️</div><div class="mosque">🕌</div><div class="kids">🧕🏻 👦🏻 👧🏻</div></div><span class="tag">PETUALANGAN SELESAI</span><h1>MASTER 5 PILLARS!</h1><p id="winText">Masyaallah! Kamu telah menyelesaikan lima misi pembelajaran tentang rukun Islam.</p><h2 id="finalScore">⭐ 5/5 BADGE</h2><div class="btnrow" style="justify-content:center"><button class="btn primary" onclick="restartGame()">🔁 MAIN LAGI</button><button class="btn light" onclick="go('map')">LIHAT PETA</button></div><p class="smallnote">Terus belajar dan praktikkan kebaikan dalam kehidupan sehari-hari.</p>
+ </section>
+ <div class="footer"><span>🧭 Jelajah • Belajar • Berbuat Baik</span><span id="footerProgress">Progress 0/5</span><span>MISSION 5 PILLARS</span></div>
+</div>
+<script>
+const missions=[
+ {name:"Syahadat",emoji:"🤲",badge:"🌟",short:"Misi 1",questions:[
+  {q:"Ada berapa rukun Islam?",opts:["Tiga","Lima","Enam"],a:1,why:"Rukun Islam ada lima. Syahadat adalah rukun Islam yang pertama."},
+  {q:"Syahadat berisi pengakuan bahwa …",opts:["Allah satu-satunya Tuhan dan Muhammad utusan Allah","Salat dilakukan tiga kali sehari","Haji wajib untuk semua orang tanpa syarat"],a:0,why:"Syahadat menyatakan bahwa tiada Tuhan selain Allah dan Nabi Muhammad adalah utusan Allah."}
+ ]},
+ {name:"Salat",emoji:"🕌",badge:"🌙",short:"Misi 2",questions:[
+  {q:"Ibadah wajib yang dilakukan lima kali sehari adalah …",opts:["Puasa","Salat","Zakat"],a:1,why:"Umat Islam melaksanakan salat fardu lima waktu setiap hari."},
+  {q:"Sebelum salat, umat Islam perlu bersuci, misalnya dengan …",opts:["Wudu","Berwisata","Tidur"],a:0,why:"Wudu merupakan salah satu cara bersuci sebelum salat ketika memenuhi ketentuannya."}
+ ]},
+ {name:"Zakat",emoji:"💝",badge:"💚",short:"Misi 3",questions:[
+  {q:"Zakat mengajarkan umat Islam untuk …",opts:["Menyimpan semua harta sendiri","Peduli dan membantu yang berhak menerima","Bersaing mengumpulkan hadiah"],a:1,why:"Zakat memiliki ketentuan tersendiri dan menjadi bentuk ketaatan serta kepedulian kepada golongan yang berhak."},
+  {q:"Zakat fitrah umumnya ditunaikan pada …",opts:["Bulan Ramadan sebelum salat Idulfitri","Setiap pagi sebelum sekolah","Hanya saat naik haji"],a:0,why:"Zakat fitrah ditunaikan pada bulan Ramadan dan sebelum salat Idulfitri sesuai ketentuannya."}
+ ]},
+ {name:"Puasa Ramadan",emoji:"🌙",badge:"⭐",short:"Misi 4",questions:[
+  {q:"Puasa wajib dilaksanakan pada bulan …",opts:["Syawal","Ramadan","Safar"],a:1,why:"Puasa Ramadan dilakukan pada bulan Ramadan, dengan ketentuan dan pengecualian yang diajarkan dalam Islam."},
+  {q:"Saat berpuasa, umat Islam belajar untuk …",opts:["Melatih kesabaran dan mengendalikan diri","Mengganggu teman","Tidak peduli kepada orang lain"],a:0,why:"Puasa melatih ketakwaan, kesabaran, dan pengendalian diri."}
+ ]},
+ {name:"Haji",emoji:"🕋",badge:"🏆",short:"Misi 5",questions:[
+  {q:"Ibadah haji dilaksanakan di …",opts:["Makkah","Jakarta","Yogyakarta"],a:0,why:"Ibadah haji dilaksanakan di Makkah dan tempat-tempat manasik terkait."},
+  {q:"Haji wajib bagi Muslim yang …",opts:["Memenuhi syarat dan mampu","Sudah memiliki banyak mainan","Selalu mendapat nilai 100"],a:0,why:"Haji diwajibkan sekali seumur hidup bagi Muslim yang memenuhi syarat dan memiliki kemampuan."}
+ ]}
+];
+let completed=new Set(), stars=0, currentMission=0, currentQuestion=0, answered=false;
+const $=id=>document.getElementById(id);
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');window.scrollTo(0,0);if(id==='map')renderMap();}
+function renderMap(){
+ $('mapGrid').innerHTML=missions.map((m,i)=>`<div class="mission ${completed.has(i)?'done':''}" role="button" tabindex="0" onclick="startMission(${i})" onkeydown="if(event.key==='Enter')startMission(${i})"><div class="emoji">${completed.has(i)?'🏅':m.emoji}</div><strong>${i+1}. ${m.name}</strong><small>${completed.has(i)?'Badge terkumpul':'Buka pos misi'}</small></div>`).join('');
+ $('mapProgress').style.width=(completed.size/5*100)+'%';$('progressText').innerHTML=`<b>Progress: ${completed.size}/5 misi selesai</b>`;$('footerProgress').textContent=`Progress ${completed.size}/5`;$('scorePill').textContent=`⭐ Bintang: ${stars}`;
+}
+function nextMission(){for(let i=0;i<5;i++)if(!completed.has(i))return i;return 0}
+function startMission(i){currentMission=i;currentQuestion=0;renderQuestion();go('questionScreen')}
+function renderQuestion(){
+ const m=missions[currentMission],q=m.questions[currentQuestion];answered=false;
+ $('missionPill').textContent=`MISI ${currentMission+1}/5`;$('questionPill').textContent=`SOAL ${currentQuestion+1}/${m.questions.length}`;$('questionProgress').style.width=((currentQuestion/m.questions.length)*100)+'%';
+ $('missionEmoji').textContent=m.emoji;$('missionTitle').textContent=m.name;$('questionText').textContent=q.q;$('feedback').className='feedback';$('feedback').textContent='';$('nextButton').style.display='none';
+ $('answers').innerHTML=q.opts.map((o,i)=>`<button class="answer" onclick="chooseAnswer(${i},this)">${String.fromCharCode(65+i)}. ${o}</button>`).join('');
+}
+function chooseAnswer(i,btn){
+ if(answered)return;answered=true;const q=missions[currentMission].questions[currentQuestion],buttons=[...document.querySelectorAll('.answer')],f=$('feedback');
+ buttons[q.a].classList.add('correct');
+ if(i===q.a){stars++;f.className='feedback show good';f.innerHTML=`✅ <b>Benar! Hebat, penjelajah!</b><br>${q.why}<br>⭐ Kamu mendapat 1 bintang.`;showToast('⭐ Jawaban benar! +1 bintang');}
+ else{btn.classList.add('wrong');f.className='feedback show bad';f.innerHTML=`💡 <b>Belum tepat, ayo belajar lagi!</b><br>Jawaban yang benar: <b>${q.opts[q.a]}</b>.<br>${q.why}`;}
+ $('scorePill').textContent=`⭐ Bintang: ${stars}`;$('nextButton').style.display='inline-block';$('nextButton').textContent=currentQuestion===missions[currentMission].questions.length-1?'SELESAI MISI 🏁':'LANJUT →';
+}
+function nextQuestion(){if(!answered)return;if(currentQuestion<missions[currentMission].questions.length-1){currentQuestion++;renderQuestion();}else{completed.add(currentMission);$('badgeEmoji').textContent=missions[currentMission].badge;$('badgeTitle').textContent=`Badge ${missions[currentMission].name} didapat!`;$('badgeText').textContent=`Kamu telah menyelesaikan ${missions[currentMission].name}. Ingat kembali pelajarannya dan terus praktikkan kebaikan.`;go('badgeScreen');renderMap();}}
+function continueAfterBadge(){if(completed.size===5){$('finalScore').textContent=`🏅 ${completed.size}/5 BADGE  •  ⭐ ${stars} BINTANG`;$('winText').textContent=`Masyaallah! Kamu menuntaskan lima misi. Kamu mendapat ${stars} bintang dari semua pertanyaan. Terus belajar tentang rukun Islam!`;go('win')}else{startMission(nextMission())}}
+function restartGame(){completed=new Set();stars=0;currentMission=0;currentQuestion=0;renderMap();go('cover')}
+function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1300)}
+renderMap();
+</script>
+</body></html>
